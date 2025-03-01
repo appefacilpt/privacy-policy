@@ -13,16 +13,33 @@
         h1, h2 {
             color: #333;
         }
-        strong {
-            font-weight: bold;
+        .flag {
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+            margin: 5px;
         }
-        em {
-            font-style: italic;
+        .language-switcher {
+            text-align: right;
+            margin-bottom: 20px;
         }
     </style>
+    <script>
+        function switchLanguage(lang) {
+            document.querySelectorAll('.policy-content').forEach(el => el.style.display = 'none');
+            document.getElementById('policy-' + lang).style.display = 'block';
+        }
+    </script>
 </head>
 <body>
-    <h1>Privacy Policy (GDPR)</h1>
+    <div class="language-switcher">
+        <img src="https://flagcdn.com/w40/gb.png" alt="English" class="flag" onclick="switchLanguage('en')">
+        <img src="https://flagcdn.com/w40/ru.png" alt="Русский" class="flag" onclick="switchLanguage('ru')">
+        <img src="https://flagcdn.com/w40/pt.png" alt="Português" class="flag" onclick="switchLanguage('pt')">
+    </div>
+    
+    <div id="policy-en" class="policy-content">
+        <h1>Privacy Policy (GDPR)</h1>
     <p><strong>Last updated:</strong> 28th February 2025</p>
     
     <h2>Summary:</h2>
@@ -71,5 +88,22 @@
     
     <h2>Changes to the policy</h2>
     <p>If we change the contents of this policy, those changes will become effective the moment we publish them on our GitHub page.</p>
+    </div>
+    
+    <div id="policy-ru" class="policy-content" style="display: none;">
+        <h1>Политика конфиденциальности (GDPR)</h1>
+        <p><strong>Последнее обновление:</strong> 28 февраля 2025</p>
+        <h2>Краткое описание:</h2>
+        <p>Мы уважаем <strong>Общие правила защиты данных (GDPR)</strong> и эта политика объясняет, как мы собираем и обрабатываем вашу информацию...</p>
+        <!-- Полный текст политики на русском -->
+    </div>
+    
+    <div id="policy-pt" class="policy-content" style="display: none;">
+        <h1>Política de Privacidade (GDPR)</h1>
+        <p><strong>Última atualização:</strong> 28 de fevereiro de 2025</p>
+        <h2>Resumo:</h2>
+        <p>Respeitamos o <strong>Regulamento Geral de Proteção de Dados da UE (GDPR)</strong> e esta política explica como coletamos e tratamos qualquer informação que você nos forneça...</p>
+        <!-- Полный текст политики на португальском -->
+    </div>
 </body>
 </html>
