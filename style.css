@@ -1,0 +1,22 @@
+/* Фон на всю страницу */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('background.jpg'); /* Имя файла изображения */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Высота на весь экран */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Стили для контента */
+.content {
+    background: rgba(255, 255, 255, 0.8); /* Полупрозрачный белый фон */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+    text-align: center;
+}
